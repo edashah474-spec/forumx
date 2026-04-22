@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForumX | Topic Discussion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">ForumX</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="admin.html" id="admin-link" class="hidden">Admin</a></li>
+                    <li><a href="#" id="logout-link" onclick="handleLogout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="topic-detail">
+            <!-- Topic content will be rendered here -->
+        </div>
+
+        <div class="reply-section">
+            <h3>Community Replies</h3>
+            <div id="replies-list">
+                <!-- Replies will be rendered here -->
+            </div>
+        </div>
+
+        <div id="reply-form" class="card">
+            <h3>Post a Reply</h3>
+            <div class="form-group">
+                <textarea id="reply-body" class="form-control" rows="5" placeholder="Share your thoughts..."></textarea>
+            </div>
+            <button class="btn" onclick="handlePostReply()">Post Reply</button>
+            <div id="reply-msg" class="message hidden"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ForumX. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

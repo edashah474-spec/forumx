@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForumX | User Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">ForumX</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="admin.html" id="admin-link" class="hidden">Admin</a></li>
+                    <li><a href="#" id="logout-link" onclick="handleLogout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="profile-content">
+            <div class="profile-header card">
+                <div class="avatar" id="profile-avatar">U</div>
+                <h2 id="profile-username">Username</h2>
+                <h4 id="profile-name">Full Name</h4>
+                <p id="profile-role" class="badge">Role</p>
+                <p id="profile-bio">Bio will be here...</p>
+                <div class="profile-meta">
+                    <span id="profile-join-date">Joined: Date</span><br>
+                    <span id="profile-last-active">Last Active: Now</span>
+                </div>
+                <div class="profile-stats">
+                    <div>
+                        <span id="profile-total-posts">0</span>
+                        <p>Posts</p>
+                    </div>
+                    <div>
+                        <span id="profile-total-replies">0</span>
+                        <p>Replies</p>
+                    </div>
+                    <div>
+                        <span id="profile-upvotes-received">0</span>
+                        <p>Upvotes Received</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-activity">
+                <div class="card">
+                    <h3>Recent Topics</h3>
+                    <div id="user-topics-list">
+                        <!-- User topics will be rendered here -->
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Recent Replies</h3>
+                    <div id="user-replies-list">
+                        <!-- User replies will be rendered here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ForumX. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

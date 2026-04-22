@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForumX | Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">ForumX</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="admin.html" id="admin-link">Admin</a></li>
+                    <li><a href="#" id="logout-link" onclick="handleLogout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container admin-dashboard">
+        <div class="card">
+            <h2>Admin Dashboard</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 id="admin-total-users">0</h3>
+                    <p>Total Users</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="admin-total-topics">0</h3>
+                    <p>Total Topics</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="admin-total-replies">0</h3>
+                    <p>Total Replies</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="admin-total-moderators">0</h3>
+                    <p>Total Moderators</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card admin-table">
+            <h3>User Management</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Banned</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="user-management-table">
+                    <!-- User data will be rendered here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card admin-table">
+            <h3>Topic Management</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Locked</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="topic-management-table">
+                    <!-- Topic data will be rendered here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card admin-table">
+            <h3>Recent Moderation Activity</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Admin ID</th>
+                        <th>Action</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="moderation-logs-table">
+                    <!-- Moderation logs will be rendered here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ForumX. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
