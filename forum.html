@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForumX | Community Forum</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">ForumX</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="admin.html" id="admin-link" class="hidden">Admin</a></li>
+                    <li><a href="#" id="logout-link" onclick="handleLogout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="forum-layout">
+            <aside class="sidebar">
+                <div class="card">
+                    <h3>Categories</h3>
+                    <select id="category-filter" class="form-control mb-20">
+                        <option value="All">All Categories</option>
+                    </select>
+                    <div class="category-list">
+                        <ul id="sidebar-categories">
+                            <!-- Categories will be rendered here -->
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn btn-ask" onclick="toggleModal('create-topic-modal', true)">Ask a Question</button>
+            </aside>
+
+            <section class="topic-list">
+                <div class="card">
+                    <h2 id="forum-title">Community Feed</h2>
+                    <div id="forum-topics-list">
+                        <!-- Topics will be rendered here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Create Topic Modal -->
+    <div id="create-topic-modal" class="hidden" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; z-index:1000;">
+        <div class="card" style="width:90%; max-width:600px;">
+            <h3>Create a New Topic</h3>
+            <div class="form-group">
+                <label for="topic-title">Title</label>
+                <input type="text" id="topic-title" class="form-control" placeholder="What's your question?">
+            </div>
+            <div class="form-group">
+                <label for="topic-category">Category</label>
+                <select id="topic-category" class="form-control">
+                    <!-- Categories will be rendered here -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="topic-body">Details</label>
+                <textarea id="topic-body" class="form-control" rows="8" placeholder="Describe your question in detail..."></textarea>
+            </div>
+            <div style="display:flex; gap:10px; margin-top:20px;">
+                <button class="btn" onclick="handleCreateTopic()">Post Topic</button>
+                <button class="btn btn-secondary" onclick="toggleModal('create-topic-modal', false)">Cancel</button>
+            </div>
+            <div id="topic-msg" class="message hidden"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ForumX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            document.getElementById(id).classList.toggle('hidden', !show);
+        }
+    </script>
+</body>
+</html>
